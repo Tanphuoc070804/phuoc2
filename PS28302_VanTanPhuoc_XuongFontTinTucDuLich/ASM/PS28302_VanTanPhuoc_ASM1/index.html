@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+
+
+<body ng-app="myapp" ng-controller="mainCtrl">
+  <nav class="navbar navbar-expand-lg bg-danger p-0" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="public/img/logo.png" style="max-width: 80px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><span class="fa-solid fa-home"></span> Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"><span class="fa-solid fa-list"></span> Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#!contact"><span class="fa-solid fa-address-book"></span> Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#!contact"><span class="fa-solid fa-comment"></span> Góp ý</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#!new"><span class="fa-regular fa-newspaper"></span> Tin tức</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#!cart"><span class="fa-solid fa-cart-shopping"></span> Giỏ hàng</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"><span class="fa-solid fa-user"></span> 
+                        Tài khoản
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ng-show="user">
+                            <a class="dropdown-item" href="#!admin">Admin</a>
+                          </li>
+                        <li ng-show="!user">
+                          <a class="dropdown-item" href="#!login">Đăng nhập</a>
+                        </li>
+                        <li ng-show="!user">
+                          <a class="dropdown-item" href="#!register">Đăng ký</a>
+                        </li>
+                        <li ng-show="!user">
+                          <a class="dropdown-item" href="#!forgot">Quên mật khẩu</a>
+                        </li>
+                        <li ng-show="user">
+                          <a class="dropdown-item" href="#!change">Đổi mật khẩu</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li ng-show="user">
+                          <a class="dropdown-item" href="#!update">Cập nhật tài khoản</a>
+                        </li>
+                        <li ng-show="user">
+                          <a class="dropdown-item" href="#">Theo dõi đơn hàng</a>
+                        </li>
+                        <li ng-show="user">
+                          <a class="dropdown-item" href="javascript:void(0)" ng-click="logout()">dang xuat</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#!alluser">All</a></li>
+
+
+
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+    <div ng-view></div>
+
+    <div class="bg-danger">
+      <div class="container">
+          <footer class="py-5">
+              <div class="row">
+                  <div class="col-6 col-md-3 mb-3">
+                      <h5>Thông tin liên hệ</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light mb-2"><strong class="text-black">Địa chỉ:</strong> 126 Trường Chinh,
+                                  P. Tân Thới Nhất, Q. 12, Tp.HCM</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light mb-2"></a><strong class="text-black">Số điện thoại::</strong>0123 456 789
+                          </li>
+                          <li class="nav-item mb-2"><a href="#"
+                                  class="nav-link p-0 text-light mb-2"><strong class="text-black">Email:</strong>Phuocvtps28302@fpt.edu.vn</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="col-6 col-md-3 mb-3">
+                      <h5>Hỗ trợ khách hàng</h5>
+                      <ul class="nav flex-column">
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light mb-2">Hướng dẫn chọn
+                                  size</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light mb-2">Chính sách đổi
+                                  trả</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light mb-2">Chính sách bảo
+                                  hành</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light mb-2">Chính sách khách
+                                  hành thân thiết</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light mb-2">Chính sách giao
+                                  nhận</a></li>
+                          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light mb-2">Chính sách thanh
+                                  toán</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="col-6 col-md-2 mb-3">
+                      <h5>Kết nối</h5>
+                      <ul class="nav flex-column">
+                          <i class="fa-brands fa-facebook pb-3"></i>
+                          <i class="fa-brands pb-3 fa-instagram"></i>
+                          <i class="fa-brands pb-3 fa-youtube"></i>
+                          <i class="fa-brands pb-3 fa-twitter"></i>
+                      </ul>
+                  </div>
+
+                  <div class="col-md-3 offset-md-1 mb-3">
+                      <form>
+                          <h5>Subscribe to our newsletter</h5>
+                          <p>Monthly digest of what's new and exciting from us.</p>
+                          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                              <label for="newsletter1" class="visually-hidden">Email address</label>
+                              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                              <button class="btn btn-primary" type="button">Subscribe</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                  <p>© 2024 Company, Inc. All rights reserved.</p>
+                  <ul class="list-unstyled d-flex">
+                      <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                  <use xlink:href="#twitter"></use>
+                              </svg></a></li>
+                      <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                  <use xlink:href="#instagram"></use>
+                              </svg></a></li>
+                      <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                  <use xlink:href="#facebook"></use>
+                              </svg></a></li>
+                  </ul>
+              </div>
+          </footer>
+      </div>
+  </div>
+   
+    <script src="public/js/bootstrap.bundle.min.js"></script>
+    <script src="public/js/angular.min.js"></script>
+    <script src="public/js/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/mainCtrl.js"></script>
+    <script src="controllers/homeCtrl.js"></script>
+    <script src="controllers/newsCtrl.js"></script>
+    <script src="controllers/newCtrl.js"></script>
+    <script src="controllers/cartCtrl.js"></script>
+    <script src="controllers/loginCtrl.js"></script>
+</body>
+</html>

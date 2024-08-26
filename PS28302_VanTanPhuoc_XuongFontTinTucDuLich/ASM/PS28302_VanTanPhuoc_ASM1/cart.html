@@ -1,0 +1,98 @@
+<div class="container ">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../index.html">Trang Chủ</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Giỏ Hàng</li>
+      </ol>
+    </nav>
+
+    <h2 class="pb-3">Giỏ Hàng Của Bạn</h2>
+    
+        <div class="card border-0">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th scope="col">Mã SP</th>
+                <th scope="col">Hình Ảnh</th>
+                <th scope="col">Tên SP</th>
+                <th scope="col">Số Lượng</th>
+                <th scope="col">Thành Tiền</th>
+                <th scope="col">Thao Tác</th>
+    
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="align-middle" ng-repeat="sp in cart">
+                <td >{{$index+1}}</td>
+                <td><img src="{{ sp.image }}" width="70px"
+                    alt=""></td>
+                <td>{{ sp.name }}</td>
+                
+                <td>
+                  <input type="number" width="80px" ng-model="sp.quantity" ng-change="saveCart()" min="1">
+                </td>
+                <td>{{ sp.quantity*sp.price | number: 0 }} đ</td>
+                <td>
+                  <button type="submit" ng-click="delete($index)" class="btn btn--sm btn-outline-danger">Xóa</button>
+                </td>
+    
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="4">Tổng Thành Tiền</th>
+                <th>{{ tinhTong() | number:0 }} đ</th>
+    
+                <th>
+                  <button class="btn btn-outline-danger" type="submit" ng-click="clearCart()">Xóa Hết</button>
+                </th>
+                
+              </tr>
+            </tfoot>
+          </table>
+          <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Đặt Hàng</button>
+        </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin giao hàng</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3">
+                    <div class="col-md-12">
+                        <label for="name" class="form-label">Họ Và Tên</label>
+                        <input type="text" class="form-control" id="name" name="name" ng-model="name">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="inputPassword4" class="form-label">Số Điện Thoại</label>
+                        <input type="number" class="form-control" id="inputPassword4" name="phone" ng-model="phone">
+                    </div>
+                    <div class="col-md-12">
+                      <label for="Address" class="form-label">Tỉnh/Thành Phố</label>
+                      <select class="form-control" ng-model="tinh" ng-options="tinh.Name for tinh in dsTinh" ></select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="Address" class="form-label">Quận/Huyện</label>
+                      <select class="form-control" ng-model="huyen" ng-options="huyen.Name for huyen in tinh.Districts"></select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="Address" class="form-label">Phường/Xã</label>
+                      <select class="form-control" ng-model="xa" ng-options="xa.Name for xa in huyen.Wards" ></select>
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress" class="form-label">Địa Chỉ</label>
+                      <input type="text" class="form-control" id="inputAddress"
+                          name="address" ng-model="address">
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">HỦY</button>
+                <button type="button" ng-click="checkOut()" class="btn btn-primary">ĐẶT HÀNG</button>
+            </div>
+        </div>
+    </div>
+</div>

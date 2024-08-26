@@ -1,0 +1,130 @@
+<div class="container p-3">
+    <div class="row">
+        <div class="col-md-9">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-decoration-none text-success small">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-decoration-none text-success small">blog</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-decoration-none text-success small">HCM city</a>
+                    </li>
+
+                </ol>
+            </nav>
+
+            <h3>{{tintuc.title}}</h3>
+            <p>dasdasdasdas</p>
+            <hr class="border-3 border-success opacity-100 w-25">
+            {{Date(tintuc.date) | date:'HH:mm dd/MM/yyyy'}} &bull; By 
+            {{tintuc.author}} &bull; <i class="fa-solid fa-eye fa-sm text-warning"></i>
+            {{tintuc.views}}
+            <br>
+            <p>
+                {{tintuc.content}}
+            </p>
+
+            <h5 class="mt-5 pb-2">Co the ban cung thich</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="public/img/cuchi.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Dia dao cu chi</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <div class="small">
+                            <img src="public/img/user.jpg" width="40" class="rounded-circle">
+                            fhdgdhhgshglghls
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="public/img/cuchi.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Dia dao cu chi</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <div class="small">
+                            <img src="public/img/user.jpg" width="40" class="rounded-circle">
+                            fhdgdhhgshglghls
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="public/img/cuchi.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Dia dao cu chi</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <div class="small">
+                            <img src="public/img/user.jpg" width="40" class="rounded-circle">
+                            fhdgdhhgshglghls
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <h5 class="mt-5" id="comment">binh luan</h5>
+            <form ng-submit="comment()" class="my-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="cam nghi cua ban"
+                    ng-model="content">
+                    <div class="input-group-text">
+                        <button type="submit" class="btn btn-success">Gửi</button>
+                    </div>
+                </div>
+                
+            </form>
+            
+            <div ng-repeat="bl in dsBL | limitTo:limit | orderBy:'-date'" class="card shadow mb-3 border-0" >
+                <div class="row g-0">
+                  <div class="col-auto p-2">
+                    <img src="public/img/user.jpg" width="60" class="img-fluid rounded" alt="...">
+                  </div>
+                  <div class="col-10">
+                    <div class="card-body p-0">
+                      <h5 class="card-title">{{bl.name}}</h5>
+                      <p class="card-text">{{bl.content}}</p>
+                      <p class="card-text"><small class="text-body-secondary">{{Date(bl.date) | date:"HH:mm dd/MM/yyyy"}}</small>
+                        <button ng-if="bl.idUser==user.id" ng-click="deleteComment(bl.id)" class="btn btn-outline-danger btn-sm">
+                          xoa
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div ng-show="limit<dsBL.length" class="text-center">
+              <button class="btn btn-outline-success" ng-click="limit = limit + 5">Xem them</button>
+            </div>
+          
+        </div>
+        <div class="col-md-3">
+            <div class="position-sticky" style="top: 70px;">
+                <h3>cam xuc cua ban</h3>
+            <button class="btn btn-outline-primary" ng-click="react('like')">
+              <i class="fa-solid fa-thumbs-up"></i>
+              {{tintuc.like}}
+            </button>
+            <button class="btn btn-outline-warning" ng-click="react('haha')">
+              <i class="fa-solid fa-face-grin-squint"></i>
+              {{tintuc.haha}}
+            </button>
+            <button class="btn btn-outline-danger" ng-click="react('dislike')">
+              <i class="fa-solid fa-thumbs-down"></i>
+              {{tintuc.dislike}}
+            </button>
+            <h5 class="pt-3">cam nghi cua ban</h5>
+            <button class="btn btn-outline-success"><i class="fa-solid fa-share"></i> Chia se</button>
+            <a href="#comment" class="btn btn-outline-success"><i class="fa-solid fa-comment"></i> Binh luan</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>

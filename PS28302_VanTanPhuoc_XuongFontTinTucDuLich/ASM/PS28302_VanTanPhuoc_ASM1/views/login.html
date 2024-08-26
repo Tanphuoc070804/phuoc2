@@ -1,0 +1,48 @@
+<div class="container py-5">
+  <h2 class="text-center p-3">Đăng nhập</h2> <hr>
+  <form ng-submit="login()" name="frmDangNhap">
+    <div class="row">
+      <div class="col-md-6 mx-auto ">
+        <div class="mb-3 pb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" ng-model="email" name="email"
+          pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
+          <div class="alert alert-warning" ng-show="frmDangNhap.email.$invalid && frmDangNhap.email.$dirty"  >
+            Email phải có @.Com
+        </div>
+        </div>
+
+        <div class="mb-3 pb-3">
+          <label for="password" class="form-label">Mật khẩu</label>
+          <input type="password" class="form-control" id="password" ng-model="password" name="password" required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+          <div class="alert alert-warning" ng-show="frmDangNhap.password.$invalid && frmDangNhap.password.$dirty"  >
+            Mật khẩu phải có ít nhất 8 kí tự. 1 kí tự HOA, 1 kí tự ĐẶC BIỆT và 1 kí tự SỐ.
+
+        </div>
+        </div>
+        <div class="mb-4">
+          Bạn chưa có tài khoản <a href="register.html">Đăng ký ngay!</a>
+        </div>
+        <div class="mb-4">
+          <a href="forgotpass.html">Quên mật khẩu!</a>
+        </div>
+        <div class="btn-group mb-2 pb-3">
+          <button type="submit" class="btn btn-danger ">
+            <div class="spinner-border spinner-border-sm"></div>
+            Đăng nhập
+          </button>
+          <hr>
+          <div ng-show="isError" class="alert alert-danger mt-3">
+            dang nhap that bai! ten dang nhap hoac mat khau khong dung!
+
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </form>
+</div>

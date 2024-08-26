@@ -1,0 +1,142 @@
+.show-hover{
+    display: none;
+ }
+ .hover-trigger:hover .show-hover{
+     display: block;
+ }
+ .badge-top{
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    background: #C81E3A;
+    color: #fff;
+    font-weight: 900px;
+    text-align: center;
+    padding: 13px 0;
+    border-radius: 5px 5px 0 0;
+ }
+ .badge-top::after{
+    content: "";
+    display: block;
+    border-width: 0 25px 15px;
+    border-color: #ffff0000 #c81e3a;
+    border-style: solid;
+    bottom: -13px;
+    left: 0;
+    position: absolute;
+    width: 50px;
+ }
+ header{
+   position: relative;
+}
+.shopping-mall{
+   position: absolute;
+   bottom: 20px;
+   font-variant: small-caps;
+}
+.shopping-mall>h1{
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-size: 50px;
+   color: white;
+   letter-spacing: 0.3px;
+   text-shadow: 0 0 2px black;
+   padding-bottom: 0px;
+   border-bottom: 1px dotted gray;
+   margin: 0px;
+}
+.shoppimg-mall>h5{
+   margin-top: 5px;
+   letter-spacing: 0.5px;
+}
+
+ .imgs-thumbnail{
+   height: 50px;
+   max-width: 95%;
+ }
+ img .thumbnail{
+   height: 300px;
+ }
+ .img-container {
+   position: relative;
+   max-width: 100%; /* Đảm bảo ảnh không vượt ra ngoài khung hiển thị */
+   overflow: hidden; /* Ẩn phần của ảnh vượt ra khỏi khung hiển thị */
+}
+
+.img-container img {
+   transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.img-container:hover img {
+   transform: scale(1.1); /* Phóng to ảnh khi hover */
+}
+.product-card {
+ border-radius: 10px;
+ overflow: hidden;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+ width: 100%;
+ height: auto;
+}
+.product-card img:hover {
+ transform: scale(1.1);
+}
+
+.gray-text{
+ color: gray;
+ font-size: 14px;
+}
+.zoom-effect-container {
+ overflow: hidden;
+}
+
+
+.zoom-effect img{
+ transition: transform 0.3s ease;
+}
+
+.zoom-effect:hover {
+ transform: scale(1.1);
+}
+.zoom-effect-container {
+ overflow: hidden;
+ max-width: 400px; /* Giới hạn kích thước của hình ảnh */
+ max-height: 300px; /* Giới hạn kích thước của hình ảnh */
+}
+.text-black:hover {
+ color: red;
+ text-decoration: none; /* Loại bỏ gạch chân */
+}
+.show-hover{
+ display: none;
+}
+.hover-trigger:hover .show-hover{
+ color: white;
+ background-color: #C81E3A;
+  display: block;
+}
+.badge-top{
+ width: 50px;
+ position: absolute;
+ top: 0;
+ left: 20px;
+ background: #C81E3A;
+ color: #fff;
+ font-weight: 900px;
+ text-align: center;
+ padding: 13px 0;
+ border-radius: 5px 5px 0 0;
+}
+.badge-top::after{
+ content: "";
+ display: block;
+ border-width: 0 25px 15px;
+ border-color: #ffff0000 #c81e3a;
+ border-style: solid;
+ bottom: -13px;
+ left: 0;
+ position: absolute;
+ width: 50px;
+}

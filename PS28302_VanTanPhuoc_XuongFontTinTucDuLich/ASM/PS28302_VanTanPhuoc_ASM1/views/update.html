@@ -1,0 +1,98 @@
+<div class="container">
+    <div class=" border rounded-top px-4 py-3 bg-light text-black">
+      <h4><i class="fa-solid fa-pen-to-square"></i> cập nhật tài khoản</h4>
+    </div>
+    <form class="border  p-4 fw-bold needs-validation" novalidate>
+      <div class="row">
+        <div class="form-group col-sm-6 mb-3">
+          <label class="mb-2" for=""><i class="fa-regular fa-envelope"></i> Email:</label>
+          <input type="text" class="form-control" required>
+          <div class="valid-feedback">
+            Very good
+          </div>
+          <div class="invalid-feedback">
+            Phải có @gmail
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <label class="mb-2" for=""><i class="fa-solid fa-pen"></i> Họ và tên:</label>
+          <input type="text" class="form-control" required>
+          <div class="valid-feedback">
+            looks good
+          </div>
+          <div class="invalid-feedback">
+            Không được bỏ trống
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-6 mb-3">
+          <label class="mb-2" for=""><i class="fa-solid fa-genderless"></i> Giới tính:</label>
+          <select class="form-select" id="form-control" required>
+            <option value="">...</option>
+            <option>Nam</option>
+            <option>Nữ</option>
+            <option>Giới tính thứ 3</option>
+          </select>
+          <div class="valid-feedback">
+            looks good
+          </div>
+          <div class="invalid-feedback">
+            Vui lòng chọn
+          </div>
+
+
+        </div>
+
+        <div class="form-group col-sm-6 mb-3">
+          <label class="mb-2" for=""><i class="fa-solid fa-phone"></i> Số điện thoại:</label>
+          <input type="number" class="form-control" required>
+          <div class="valid-feedback">
+            looks good
+          </div>
+          <div class="invalid-feedback">
+            Không được bỏ trống
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-6 mb-3">
+          <label class="mb-2" for=""><i class="fa-solid fa-person-dress"></i> Địa chỉ giao hàng:</label>
+          <input type="text" class="form-control" required>
+          <div class="valid-feedback">
+            looks good
+          </div>
+          <div class="invalid-feedback">
+            Không được bỏ trống
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6 mb-3">
+          <label for="exampleInputPassword1" class="form-label"><i class="fa-solid fa-lock"></i> Cập nhật mật khẩu
+            mới:</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+          <div class="invalid-feedback">
+            Mật khẩu phải có ít nhất 8 kí tự. 1 kí tự HOA, 1 kí tự ĐẶC BIỆT và 1 kí tự SỐ.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-5 mb-3">
+          <label for="fileInput" class="form-label">Chọn ảnh:</label>
+          <input type="file" class="form-control" id="fileInput">
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-12">
+          <button type="submit" class="btn btn-outline-secondary "><i class="fa-solid fa-download"></i>
+            Lưu</button>
+          <button type="submit" class="btn btn-outline-secondary "><i class="fa-solid fa-delete-left"></i>
+            Hủy</button>
+
+        </div>
+      </div>
+    </form>
+  </div>

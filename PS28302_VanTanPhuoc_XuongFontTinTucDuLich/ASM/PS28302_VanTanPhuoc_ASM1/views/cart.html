@@ -1,0 +1,95 @@
+<div class="container p-3">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#" class="text-decoration-none text-success small">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#" class="text-decoration-none text-success small">Cart</a>
+            </li>
+        </ol>
+    </nav>
+    <h4>gio hang</h4>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>anh</th>
+                    <th>San pham</th>
+                    <th>so luong</th>
+                    <th>gia</th>
+                    <th>thanh tien</th>
+                    <th>hanh dong</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="pd in cart" class="align-middle">
+                    <td>{{$index+1}}</td>
+                    <td><img src="public/img/{{pd.image}}" width="100px"></td>
+                    <td>{{pd.name}}</td>
+                    <td>
+                        <input type="number" class="form-control" style="width: 100px;" ng-model="pd.quantity"
+                         ng-change="saveCart()" min="1">
+                    </td>
+                    <td>{{pd.price | number:3}} <u>VND</u></td>
+                    <td>
+                        {{pd.price * pd.quantity | number:3}} <u>VND</u>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-danger" ng-click="delete($index)">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="">
+                    <th colspan="5">Tong thanh tien</th>
+                    <th>{{tinhtong() | number:3}} <u>VND</u></th>
+                    <th>
+                        <button class="btn btn-outline-danger" ng-click="deleteAll()">
+                            <i class="fa-solid fa-trash-can"></i> All
+                        </button> 
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+        <button class="btn btn-outline-danger btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            ĐẶT HÀNG</button>
+    </div>
+    
+        
+    
+</div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Thong tin giao hang</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Ho ten</label>
+                  <input type="text" class="form-control" id="name" ng-model="name">
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">So dien thoai</label>
+                  <input type="number" class="form-control" id="phone" ng-model="phone">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">dia chi</label>
+                    <input type="text" class="form-control" id="address" ng-model="address">
+                  </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">HỦY</button>
+            <button type="button" ng-click="checkOut()" class="btn btn-primary">ĐẶT HÀNG</button>
+        </div>
+        </div>
+      </div>
+    </div>

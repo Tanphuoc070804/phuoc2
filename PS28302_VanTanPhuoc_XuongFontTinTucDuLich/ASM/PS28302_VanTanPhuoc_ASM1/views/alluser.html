@@ -1,0 +1,376 @@
+<div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane"
+          type="button" role="tab" aria-controls="login-tab-pane" aria-selected="true">Đăng nhập</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-tab-pane"
+          type="button" role="tab" aria-controls="register-tab-pane" aria-selected="false">Đăng ký</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="change-tab" data-bs-toggle="tab" data-bs-target="#change-tab-pane" type="button"
+          role="tab" aria-controls="change-tab-pane" aria-selected="false">Đổi mật khẩu</button>
+      </li>
+
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="forgot-tab" data-bs-toggle="tab" data-bs-target="#forgot-tab-pane" type="button"
+          role="tab" aria-controls="forgot-tab-pane" aria-selected="false">Quên mật khẩu</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="update-tab" data-bs-toggle="tab" data-bs-target="#update-tab-pane" type="button"
+          role="tab" aria-controls="update-tab-pane" aria-selected="false">Cập nhật tài khoản</button>
+      </li>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+
+      <div class="tab-pane fade show active" id="register-tab-pane" role="tabpanel" aria-labelledby="register-tab"
+        tabindex="0">
+        <form class="needs-validation bg-light" novalidate>
+          <h2 class="text-center p-3">Đăng ký</h2>
+          <hr>
+          <div class="row">
+            <div class="col-md-6 mx-auto ">
+              <div class="mb-3">
+                <label for="hoten" class="form-label">Họ và tên:</label>
+                <input type="text" class="form-control" id="hoten" aria-describedby="emailHelp" required>
+                <div class="valid-feedback">
+                  Very Good
+                </div>
+                <div class="invalid-feedback">
+                  Vui lòng không được để trống!
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" required>
+                <div class="valid-feedback">
+                  email hợp lệ!
+                </div>
+                <div class="invalid-feedback">
+                  Phải có @gmail!
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="tendn" class="form-label">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="tendn" aria-describedby="emailHelp" required>
+                <div class="valid-feedback">
+                  Very Good
+                </div>
+                <div class="invalid-feedback">
+                  Vui lòng không được để trống!
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" required
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                <div class="invalid-feedback">
+                  Mật khẩu phải có ít nhất 8 kí tự. 1 kí tự HOA, 1 kí tự ĐẶC BIỆT và 1 kí tự SỐ.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Nhập lại mật khẩu</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" required>
+                <div class="valid-feedback">
+                  Very Good
+                </div>
+                <div class="invalid-feedback">
+                  Mật khẩu không khớp!
+                </div>
+              </div>
+              <div class="mb-4">
+                Bạn đã có tài khoản <a href="login.html">Đăng nhập ngay!</a>
+              </div>
+              <div class="btn-group mb-2">
+                <button type="submit" class="btn btn-danger ">
+                  <div class="spinner-border spinner-border-sm"></div>
+                  đăng ký
+                </button>
+
+              </div>
+
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+      <div class="tab-pane fade" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab" tabindex="0">
+        <form class="needs-validation bg-light" novalidate>
+
+          <h2 class="text-center p-3">Đăng nhập</h2>
+          <hr>
+          <div class="row">
+            <div class="col-md-6 mx-auto ">
+              <div class="mb-3">
+                <label for="tendn" class="form-label">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="tendn" aria-describedby="emailHelp" required>
+                <div class="valid-feedback">
+                  Very Good
+                </div>
+                <div class="invalid-feedback">
+                  Vui lòng không được để trống!
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" required
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                <div class="invalid-feedback">
+                  Mật khẩu phải có ít nhất 8 kí tự. 1 kí tự HOA, 1 kí tự ĐẶC BIỆT và 1 kí tự SỐ.
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="remember">
+                  <label for="remember" class="form-check-label">
+                    Remember me?
+                  </label>
+                </div>
+              </div>
+              <div class="mb-4">
+                Bạn chưa có tài khoản <a href="register.html">Đăng ký ngay!</a>
+              </div>
+              <div class="mb-4">
+                <a href="forgotpass.html">Quên mật khẩu!</a>
+              </div>
+              <div class="btn-group mb-2">
+                <button type="submit" class="btn btn-danger ">
+                  <div class="spinner-border spinner-border-sm"></div>
+                  Đăng nhập
+                </button>
+
+              </div>
+
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+      <div class="tab-pane fade" id="change-tab-pane" role="tabpanel" aria-labelledby="change-tab" tabindex="0">
+        <form class="needs-validation bg-light" novalidate>
+
+          <h2 class="text-center p-3">Đổi mật khẩu</h2>
+          <hr>
+          <div class="row">
+            <div class="col-md-6 mx-auto ">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Vui lòng nhập Email khi đăng ký tài khoản!</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" required>
+                <div class="valid-feedback">
+                  email hợp lệ!
+                </div>
+                <div class="invalid-feedback">
+                  Phải có @gmail!
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="tendn" class="form-label">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="tendn" aria-describedby="emailHelp" required>
+                <div class="valid-feedback">
+                  Very Good
+                </div>
+                <div class="invalid-feedback">
+                  Vui lòng không được để trống!
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mật khẩu cũ</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" required
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                <div class="invalid-feedback">
+                  Mật khẩu phải có ít nhất 8 kí tự. 1 kí tự HOA, 1 kí tự ĐẶC BIỆT và 1 kí tự SỐ.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mật khẩu mới</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" required
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                <div class="invalid-feedback">
+                  Mật khẩu phải có ít nhất 8 kí tự. 1 kí tự HOA, 1 kí tự ĐẶC BIỆT và 1 kí tự SỐ.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Nhập lại mật khẩu mới</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" required>
+                <div class="valid-feedback">
+                  Very Good
+                </div>
+                <div class="invalid-feedback">
+                  Mật khẩu không khớp!
+                </div>
+              </div>
+
+              <div class="mb-4">
+                Bạn chưa có tài khoản <a href="register.html">Đăng ký ngay!</a>
+              </div>
+              <div class="btn-group mb-2">
+                <button type="submit" class="btn btn-danger ">
+
+                  Xác nhận đổi</button>
+
+              </div>
+
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+      <div class="tab-pane fade" id="forgot-tab-pane" role="tabpanel" aria-labelledby="forgot-tab" tabindex="0">
+        <form class="needs-validation bg-light" novalidate>
+
+          <h2 class="text-center p-3">Quên mật khẩu</h2>
+          <hr>
+          <div class="row">
+            <div class="col-md-6 mx-auto ">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Vui lòng nhập Email khi đăng ký tài khoản!</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" required>
+                <div class="valid-feedback">
+                  email hợp lệ!
+                </div>
+                <div class="invalid-feedback">
+                  Phải có @gmail!
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="tendn" class="form-label">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="tendn" aria-describedby="emailHelp" required>
+                <div class="valid-feedback">
+                  Very Good
+                </div>
+                <div class="invalid-feedback">
+                  Vui lòng không được để trống!
+                </div>
+              </div>
+
+
+              <div class="mb-4">
+                Bạn chưa có tài khoản <a href="register.html">Đăng ký ngay!</a>
+              </div>
+              <div class="btn-group mb-2">
+                <button type="submit" class="btn btn-danger ">
+
+                  Tạo mật khẩu mới</button>
+
+              </div>
+
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+      <div class="tab-pane fade" id="update-tab-pane" role="tabpanel" aria-labelledby="update-tab" tabindex="0">
+        <div class=" border rounded-top px-4 py-3 bg-light text-black">
+          <h4><i class="fa-solid fa-pen-to-square"></i> cập nhật tài khoản</h4>
+        </div>
+
+        <form class="border  p-4 fw-bold needs-validation" novalidate>
+          <div class="row">
+            <div class="form-group col-sm-6 mb-3">
+              <label class="mb-2" for=""><i class="fa-regular fa-envelope"></i> Email:</label>
+              <input type="text" class="form-control" required>
+              <div class="valid-feedback">
+                Very good
+              </div>
+              <div class="invalid-feedback">
+                Phải có @gmail
+              </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+              <label class="mb-2" for=""><i class="fa-solid fa-pen"></i> Họ và tên:</label>
+              <input type="text" class="form-control" required>
+              <div class="valid-feedback">
+                looks good
+              </div>
+              <div class="invalid-feedback">
+                Không được bỏ trống
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6 mb-3">
+              <label class="mb-2" for=""><i class="fa-solid fa-genderless"></i> Giới tính:</label>
+              <select class="form-select" id="form-control" required>
+                <option value="">...</option>
+                <option>Nam</option>
+                <option>Nữ</option>
+                <option>Giới tính thứ 3</option>
+              </select>
+              <div class="valid-feedback">
+                looks good
+              </div>
+              <div class="invalid-feedback">
+                Vui lòng chọn
+              </div>
+
+
+            </div>
+
+            <div class="form-group col-sm-6 mb-3">
+              <label class="mb-2" for=""><i class="fa-solid fa-phone"></i> Số điện thoại:</label>
+              <input type="number" class="form-control" required>
+              <div class="valid-feedback">
+                looks good
+              </div>
+              <div class="invalid-feedback">
+                Không được bỏ trống
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6 mb-3">
+              <label class="mb-2" for=""><i class="fa-solid fa-person-dress"></i> Địa chỉ giao hàng:</label>
+              <input type="text" class="form-control" required>
+              <div class="valid-feedback">
+                looks good
+              </div>
+              <div class="invalid-feedback">
+                Không được bỏ trống
+              </div>
+            </div>
+
+            <div class="form-group col-sm-6 mb-3">
+              <label for="exampleInputPassword1" class="form-label"><i class="fa-solid fa-lock"></i> Cập nhật mật khẩu
+                mới:</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" required
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+              <div class="invalid-feedback">
+                Mật khẩu phải có ít nhất 8 kí tự. 1 kí tự HOA, 1 kí tự ĐẶC BIỆT và 1 kí tự SỐ.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-5 mb-3">
+              <label for="fileInput" class="form-label">Chọn ảnh:</label>
+              <input type="file" class="form-control" id="fileInput">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-12">
+              <button type="submit" class="btn btn-outline-secondary "><i class="fa-solid fa-download"></i>
+                Lưu</button>
+              <button type="submit" class="btn btn-outline-secondary "><i class="fa-solid fa-delete-left"></i>
+                Hủy</button>
+
+            </div>
+          </div>
+        </form>
+
+        <div class="border rounded-bottom px-4 py-2">
+          <p>Vui lòng điền đầy đủ thông tin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
